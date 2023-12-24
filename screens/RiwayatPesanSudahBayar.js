@@ -55,7 +55,7 @@ function RiwayatPesan({ navigation }) {
         >
           <Text
             style={{
-              color: "#04B4A2",
+              color: "#528BF9",
               fontFamily: "Poppins",
               textAlign: "center",
             }}
@@ -67,7 +67,7 @@ function RiwayatPesan({ navigation }) {
         <TouchableOpacity
           style={{
             flex: 1,
-            backgroundColor: "#04B4A2",
+            backgroundColor: "#528BF9",
             elevation: 3,
             paddingVertical: 20,
           }}
@@ -131,7 +131,7 @@ function RiwayatPesan({ navigation }) {
               </View>
               <View style={{ flex: 1, alignItems: "flex-end" }}>
                 <Text
-                  style={{ color: "#04B4A2", fontFamily: "Poppins", fontSize: 18, fontWeight: "bold" }}
+                  style={{ color: "#528BF9", fontFamily: "Poppins", fontSize: 18, fontWeight: "bold" }}
                 >
                   {item.price}
                 </Text>

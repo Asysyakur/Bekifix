@@ -21,12 +21,12 @@ const Header = ({ setSearchQuery }) => {
 
   return (
     <ImageBackground
-      source={require("../assets/BG-header.jpg")} // Change the path to your local image
+      source={require("../assets/Header-Gradasi.png")} // Change the path to your local image
     >
       <View style={styles.headerContainer}>
         {/* Replace text with image */}
         <Image
-          source={require("../assets/Dlillah-Logo.png")} // Specify the path to your local image
+          source={require("../assets/Beki.png")} // Specify the path to your local image
           style={styles.logoImage}
         />
 
@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
   },
   logoImage: {
-    width: 170,
-    height: 50,
+    width: 100,
+    height: 120,
     alignSelf: "center",
     marginRight: 10,
     marginBottom: 10,

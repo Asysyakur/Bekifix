@@ -8,13 +8,13 @@ const Carouselcopy = () => {
   const [active, setActive] = useState(0);
 
   const images = [
-    { id: 0, image: require("../assets/bikaambon.jpg") },
-    { id: 1, image: require("../assets/Chocopie.jpg") },
-    { id: 2, image: require("../assets/Chitato.jpg") },
-    { id: 3, image: require("../assets/C1.jpg") },
+    { id: 0, image: require("../assets/Banner-ultra.png") },
+    { id: 1, image: require("../assets/Banner-bengbeng.png") },
+    { id: 2, image: require("../assets/Banner-skincare.png") },
+    { id: 3, image: require("../assets/Banner-donat.png") },
   ];
 
-  const scrollViewRef = useRef(null);Zz
+  const scrollViewRef = useRef(null);
 
   return (
     <View style={styles.carouselContainer}>

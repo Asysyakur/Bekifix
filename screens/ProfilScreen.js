@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     flexDirection: "row", // Membuat konten sejajar (horizontal)
     alignItems: "center", // Mengatur konten secara vertikal
     justifyContent: "center", // Menengahkan konten secara horizontal
-    backgroundColor: "#04B4A2",
+    backgroundColor: "#528BF9",
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,
