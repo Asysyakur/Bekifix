@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   bayarButton: {
-    backgroundColor: '#04B4A2',
+    backgroundColor: '#528BF9',
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: 'center',

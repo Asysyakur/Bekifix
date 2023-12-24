@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   pesanButton: {
-    backgroundColor: '#04B4A2',
+    backgroundColor: '#528BF9',
     borderRadius: 10,
     padding: 10,
     alignItems: 'center',
