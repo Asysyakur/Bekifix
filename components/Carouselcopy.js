@@ -14,7 +14,7 @@ const Carouselcopy = () => {
     { id: 3, image: require("../assets/C1.jpg") },
   ];
 
-  const scrollViewRef = useRef(null);Zz
+  const scrollViewRef = useRef(null);
 
   return (
     <View style={styles.carouselContainer}>
