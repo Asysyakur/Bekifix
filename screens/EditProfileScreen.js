@@ -58,6 +58,7 @@ function EditProfileScreen({ navigation, route }) {
 
       if (response.status === 200) {
         console.log("Profile updated successfully");
+        navigation.navigate("Profil", { dataUpdated: true });
       } else {
         console.error("Profile update failed");
       }
@@ -186,6 +187,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 5,
   },
+  profileImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    marginRight: 20,
+  },
   editProfileInput: {
     borderBottomWidth: 1,
     borderColor: "#CCCCCC",
@@ -193,7 +200,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   saveButton: {
-    backgroundColor: "#04B4A2",
+    backgroundColor: "#528BF9",
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,

@@ -12,6 +12,7 @@ import {
 import Icon from "react-native-vector-icons/Ionicons";
 import HeaderPage from "../components/HeaderPage";
 import axios from "axios";
+import Modal from "react-native-modal";
 
 function RiwayatPesan({ navigation, userId  }) {
   const [kategori, setKategori] = useState([
@@ -28,7 +29,8 @@ function RiwayatPesan({ navigation, userId  }) {
   });
 
   const [dataBarang, setDataBarang] = useState([]);
-
+  const [modal, setModal] = useState(false);
+  const [selectedItemId, setSelectedItemId] = useState(null);
   useEffect(() => {
     fetchData(); // Mengambil data transaksi saat komponen di-mount
   }, []);
@@ -79,7 +81,7 @@ function RiwayatPesan({ navigation, userId  }) {
         <TouchableOpacity
           style={{
             flex: 1,
-            backgroundColor: "#04B4A2",
+            backgroundColor: "#528BF9",
             elevation: 3,
             paddingVertical: 20,
           }}
@@ -129,8 +131,12 @@ function RiwayatPesan({ navigation, userId  }) {
               return null;
             }
             return (
+              <View>
             <TouchableOpacity
-            onPress={() => navigation.navigate("Hasil Transaksi", { data: item })}
+            onPress={() => {
+              setModal(true);
+              setSelectedItemId(item.id);
+            }}
               style={{
                 backgroundColor: "#FFFFFF",
                 elevation: 3,
@@ -170,14 +176,14 @@ function RiwayatPesan({ navigation, userId  }) {
               </View>
               <View style={{ flex: 1, alignItems: "flex-end" }}>
                 <Text
-                  style={{ color: "#04B4A2", fontFamily: "Poppins", fontSize: 18, fontWeight: "bold" }}
+                  style={{ color: "#528BF9", fontFamily: "Poppins", fontSize: 18, fontWeight: "bold" }}
                 >
                   Rp. {item.total_harga}
                 </Text>
                 <TouchableOpacity
         onPress={() => handleselesai(item.id)}
         style={{
-          backgroundColor: "#04B4A2",
+          backgroundColor: "#528BF9",
           elevation: 3,
           padding: 2,
           margin: 20,
@@ -196,6 +202,99 @@ function RiwayatPesan({ navigation, userId  }) {
               </View>
               
             </TouchableOpacity>
+            <Modal isVisible={modal && selectedItemId === item.id}>
+        <View style={{
+            backgroundColor: '#FFFFFF', 
+            paddingVertical: 50, 
+            paddingHorizontal: 50,
+            borderRadius: 8}}>
+        
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Image style={{
+                //foto atau logo yg atasnya//
+                width: 120, 
+                height: 120, 
+                borderRadius: 60, 
+                borderWidth: 5, 
+                borderColor: '#FFFFFF', 
+                backgroundColor: '#FFFFFF', 
+                borderColor: '#FFFFFF',
+                position: 'absolute',
+                zIndex: '1',
+                bottom: -5
+            }} 
+                source={require('../assets/pay1.png')}/>
+        </View>
+          <Text style={{
+            //tulisan paling atas//
+            fontWeight: 'bold', 
+            color: '#212121', 
+            textAlign: 'center',
+            marginTop: 10, 
+            fontSize: 25
+            }}>Riwayat Produk!</Text>
+          <Text style={{
+            fontWeight: 'bold', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 18, 
+            marginTop: 40,
+            marginBottom: 10
+            }}>Rincian Transaksi</Text>
+            <Text style={{
+            fontWeight: 'normal', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 14, 
+            marginTop: 10
+            }}>ID Transaksi: {item.id}</Text>
+          <Text style={{
+            //tulisan yg keterangannya//
+            fontWeight: 'normal', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 14, 
+            marginTop: 10
+            }}>Nama Produk: {product.name}</Text>
+          <Text style={{
+            fontWeight: 'normal', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 14, 
+            marginTop: 10
+            }}>Jumlah Pesanan : {item.total_pesanan}</Text>
+          <Text style={{
+            fontWeight: 'normal', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 14, 
+            marginTop: 10
+            }}>Total Harga : Rp. {item.total_harga}</Text>
+          <Text style={{
+            fontWeight: 'normal', 
+            color: '#212121', 
+            textAlign: 'left', 
+            fontSize: 14, 
+            marginTop: 10
+            }}>Status : Dalam Pengiriman</Text>
+          
+          
+          <TouchableOpacity style={{
+            //*yg tombol klik bawahnya (1)*//
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            marginTop: 20, 
+            backgroundColor: '#80AAFC', 
+            paddingVertical: 10, 
+            borderRadius: 50, 
+            elevation: 8,
+            fontSize: 15
+            }}>
+            <Text onPress={()=> setModal(false)} style={{color: '#FFFFFF'}}>Kembali</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
+            </View>
           );
         }}
         />

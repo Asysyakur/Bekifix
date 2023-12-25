@@ -121,7 +121,7 @@ const MenuCard = ({userId}) => {
               <Text
                 style={{
                   paddingLeft: 10,
-                  color: "#04B4A2",
+                  color: "#528BF9",
                   fontFamily: "Poppins",
                 }}
               >
@@ -134,7 +134,7 @@ const MenuCard = ({userId}) => {
                   position: "absolute",
                   bottom: 5,
                   right: 8,
-                  backgroundColor: "#04B4A2", // Changed the button color
+                  backgroundColor: "#528BF9", // Changed the button color
                   borderRadius: 100,
                   padding: 5,
                 }}

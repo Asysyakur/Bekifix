@@ -127,22 +127,22 @@ function App() {
               }
 
               // You can return any component here as the tab icon
-              return <Ionicons name={iconName} size={size} color="#04B4A2" />;
+              return <Ionicons name={iconName} size={size} color={color} />;
             },
             tabBarLabel: () => null, // Hide the label
           })}
           initialRouteName="Home"
         >
-<Tab.Screen
-  name="Home"
-  component={() => <MenuStack userId={userId} />}
-/>
           
           <Tab.Screen
             name="Keranjang"
             component={() => <KeranjangStack userId={userId} />}
           />
 
+<Tab.Screen
+  name="Home"
+  component={() => <MenuStack userId={userId} />}
+/>
           <Tab.Screen
             name="Profil"
             component={() => <RiwayatStack userId={userId} />}

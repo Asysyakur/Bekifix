@@ -8,18 +8,21 @@ function KeranjangScreen({ navigation, userId }) {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    fetchData(); // Fetch transaction data when the component mounts
-  }, []);
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchData(); // Fetch data again when the screen comes into focus
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/keranjang/${userId}`);
+      const response = await axios.get(`http://127.0.0.1:8000/keranjang/${userId}`);
       console.log("Response status:", response.status); // Log HTTP status
 
-      const data = await response.json();
-      console.log("Fetched data:", data); // Log fetched data
+      console.log("Fetched data:", response.data); // Log fetched data
 
-      setKeranjangList(data);
+      setKeranjangList(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -133,7 +136,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   pesanButton: {
-    backgroundColor: '#04B4A2',
+    backgroundColor: '#528BF9',
     borderRadius: 10,
     padding: 10,
     alignItems: 'center',

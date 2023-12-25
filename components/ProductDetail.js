@@ -95,11 +95,11 @@ const ProductDetail = ({ route, navigation, userId }) => {
           </Text>
 
           <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 20, marginLeft: 16 }}>
-            <TouchableOpacity onPress={handleDecrement} style={{ padding: 10, backgroundColor: '#04B4A2', borderRadius: 5 }}>
+            <TouchableOpacity onPress={handleDecrement} style={{ padding: 10, backgroundColor: '#528BF9', borderRadius: 5 }}>
               <Text style={{ fontSize: 18, fontWeight: '800', color:'white' }}>-</Text>
             </TouchableOpacity>
             <Text style={{ fontSize: 20, marginHorizontal: 10 }}>{quantity}</Text>
-            <TouchableOpacity onPress={handleIncrement} style={{ padding: 10, backgroundColor: '#04B4A2', borderRadius: 5 }}>
+            <TouchableOpacity onPress={handleIncrement} style={{ padding: 10, backgroundColor: '#528BF9', borderRadius: 5 }}>
               <Text style={{ fontSize: 18, fontWeight: '800', color:'white' }}>+</Text>
             </TouchableOpacity>
           </View>
@@ -117,17 +117,17 @@ const ProductDetail = ({ route, navigation, userId }) => {
               flex: 1,
               backgroundColor: 'white',
               paddingVertical: 24,
-              borderColor: '#04B4A2',
+              borderColor: '#528BF9',
               borderWidth: 1,
             }}
           >
-            <Text style={{ color: '#04B4A2', textAlign: 'center', fontSize: 16 }}>Tambah ke Keranjang</Text>
+            <Text style={{ color: '#528BF9', textAlign: 'center', fontSize: 16 }}>Tambah ke Keranjang</Text>
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate("Pesan Sekarang", {item, quantity})}
             style={{
               flex: 1,
-              backgroundColor: '#04B4A2',
+              backgroundColor: '#528BF9',
               paddingVertical: 24,
             }}
           >

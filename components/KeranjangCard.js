@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     position: 'relative',
   },
   pesanButton: {
-    backgroundColor: '#04B4A2',
+    backgroundColor: '#528BF9',
     borderRadius: 10,
     padding: 10,
     alignItems: 'center',

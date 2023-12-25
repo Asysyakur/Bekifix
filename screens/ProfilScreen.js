@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 import HeaderPage from "../components/HeaderPage";
-import DefaultProfileImage from "../assets/ProfilImg.png";
+import DefaultProfileImage from "../assets/favicon.png";
 import axios from "axios";
 
-function ProfileScreen({ navigation , userId }) {
+function ProfileScreen({ navigation , userId, route  }) {
   const [userProfile, setUserProfile] = useState(null);
 
   const handleLogout = () => {
@@ -29,7 +29,7 @@ function ProfileScreen({ navigation , userId }) {
     };
 
     fetchUserProfile();
-  }, [userId]);
+  },[route.params?.dataUpdated]);
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     flexDirection: "row", // Membuat konten sejajar (horizontal)
     alignItems: "center", // Mengatur konten secara vertikal
     justifyContent: "center", // Menengahkan konten secara horizontal
-    backgroundColor: "#04B4A2",
+    backgroundColor: "#528BF9",
     paddingVertical: 15,
     paddingHorizontal: 20,
     borderRadius: 10,

@@ -8,10 +8,10 @@ const Carousel = () => {
   const [active, setActive] = useState(0);
 
   const images = [
-    { id: 0, image: require("../assets/bikaambon.jpg") },
-    { id: 1, image: require("../assets/Brownies.jpg") },
-    { id: 2, image: require("../assets/Marmer.jpg") },
-    { id: 3, image: require("../assets/Original.jpg") },
+    { id: 0, image: require("../assets/Banner-ultra.png") },
+    { id: 1, image: require("../assets/Banner-bengbeng.png") },
+    { id: 2, image: require("../assets/Banner-skincare.png") },
+    { id: 3, image: require("../assets/Banner-donat.png") },
   ];
 
   const scrollViewRef = useRef(null);

@@ -41,13 +41,9 @@ const Register = ({ navigation }) => {
   };
 
   return (
-    <ImageBackground
-      source={require('../assets/BG-LOGIN.jpg')} // Use the same background image as Login
-      style={styles.container}
-    >
-      <View style={styles.overlay}>
+      <View style={[styles.container, { backgroundColor: "#528BF9" }]}>
       <Image
-          source={require('../assets/Logo Dlillah.png')}
+          source={require('../assets/BeKi.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>Registrasi</Text> {/* Match title style */}
@@ -79,7 +75,6 @@ const Register = ({ navigation }) => {
           <Text style={styles.registerText}>Sudah punya akun? Masuk di sini</Text>
         </TouchableOpacity>
       </View>
-    </ImageBackground>
   );
 };
 
@@ -107,7 +102,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: '#04B4A2', // Match color to Login component
+    color: 'white', // Match color to Login component
   },
   input: {
     width: '100%',
@@ -132,7 +127,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   registerText: {
-    color: '#04B4A2', // Match color to Login component
+    color: 'white', // Match color to Login component
     marginTop: 16,
     textDecorationLine: 'underline',
   },

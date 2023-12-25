@@ -27,6 +27,7 @@ const Login = ({ navigation, setIsLoggedIn, setUserId  }) => {
 
         // Set the user ID and set isLoggedIn to true
         setUserId(userId);
+        navigation.navigate('Home');
       // Lakukan navigasi atau logika setelah registrasi berhasil
     } catch (error) {
       console.error('Registrasi gagal:', error);
@@ -40,13 +41,9 @@ const Login = ({ navigation, setIsLoggedIn, setUserId  }) => {
   };
 
   return (
-    <ImageBackground
-      source={require('../assets/BG-LOGIN.jpg')}
-      style={styles.container}
-    >
-      <View style={styles.overlay}>
+      <View style={[styles.container, { backgroundColor: "#528BF9" }]}>
         <Image
-          source={require('../assets/Logo Dlillah.png')}
+          source={require('../assets/BeKi.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>Masuk</Text>
@@ -68,7 +65,6 @@ const Login = ({ navigation, setIsLoggedIn, setUserId  }) => {
           <Text style={styles.loginText}>Belum punya akun? Buat di sini</Text>
         </TouchableOpacity>
       </View>
-    </ImageBackground>
   );
 };
 
@@ -96,7 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: '#04B4A2', // Match color to Login component
+    color: 'white', // Match color to Login component
   },
   input: {
     width: '100%',
@@ -115,13 +111,13 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   buttonText: {
-    color: '#04B4A2',
+    color: '#528BF9',
     fontSize: 16,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   loginText: {
-    color: '#04B4A2', // Match color to Login component
+    color: 'white', // Match color to Login component
     marginTop: 16,
     textDecorationLine: 'underline',
   },
