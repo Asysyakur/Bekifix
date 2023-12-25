@@ -54,7 +54,7 @@ function AboutStoreScreen() {
     <ScrollView style={styles.container}>
       {/* Logo Toko */}
       <Image
-        source={require('../assets/Beki.png')} // Ganti dengan path yang sesuai
+        source={require('../assets/BeKi.png')} // Ganti dengan path yang sesuai
         style={styles.logo}
       />
 

@@ -5,7 +5,7 @@ import {
   View,
   TextInput,
   Image,
-  ImageBackground,
+  ImageBackground,TouchableOpacity
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -23,12 +23,15 @@ const Header = ({ setSearchQuery }) => {
     <ImageBackground
       source={require("../assets/Header-Gradasi.png")} // Change the path to your local image
     >
-      <View>
+      <View style={styles.headerContainer}>
         <Text style={styles.headertext}>
           Hi, Pengguna
         </Text>
+        <TouchableOpacity onPress={() => navigation.navigate("FAQ")} style={styles.chatIconContainer} >
+        <Text style={styles.chatIcon}>💬</Text>
+      </TouchableOpacity>
       </View>
-      <View style={styles.headerContainer}>
+      <View style={styles.headerSearch}>
         {/* Replace text with image */}
         {/* <Image
           source={require("../assets/Beki.png")} // Specify the path to your local image
@@ -63,6 +66,14 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   headerContainer: {
+    backgroundColor: '#528BF9',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  headerSearch: {
     flex: 1,
     paddingVertical: 20,
     paddingHorizontal: 30,

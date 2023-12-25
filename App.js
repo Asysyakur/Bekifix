@@ -134,15 +134,15 @@ function App() {
           initialRouteName="Home"
         >
           
+<Tab.Screen
+  name="Home"
+  component={() => <MenuStack userId={userId} />}
+/>
           <Tab.Screen
             name="Keranjang"
             component={() => <KeranjangStack userId={userId} />}
           />
 
-<Tab.Screen
-  name="Home"
-  component={() => <MenuStack userId={userId} />}
-/>
           <Tab.Screen
             name="Profil"
             component={() => <RiwayatStack userId={userId} />}
